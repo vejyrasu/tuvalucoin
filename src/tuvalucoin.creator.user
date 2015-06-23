@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 3.4.0, 2015-06-06T10:04:18. -->
+<!-- Written by QtCreator 3.4.0, 2015-06-23T23:38:28. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -159,7 +159,7 @@
     </valuelist>
     <value type="int" key="PE.EnvironmentAspect.Base">2</value>
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
-    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Arguments"></value>
+    <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Arguments">-testnet -connect-192.168.0.1</value>
     <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.Executable">C:/novacoin-nvc-v0.5.2/src/novacoind.exe</value>
     <value type="bool" key="ProjectExplorer.CustomExecutableRunConfiguration.UseTerminal">true</value>
     <value type="QString" key="ProjectExplorer.CustomExecutableRunConfiguration.WorkingDirectory">%{buildDir}</value>
