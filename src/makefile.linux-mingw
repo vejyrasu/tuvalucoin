@@ -107,7 +107,7 @@ OBJS= \
     obj/pbkdf2.o \
     obj/scrypt.o
 
-all: novacoind.exe
+all: tuvalucoind.exe
 
 #
 # LevelDB support
@@ -148,13 +148,13 @@ DEFS += -DHAVE_BUILD_INFO
 obj/%.o: %.cpp $(HEADERS)
 	$(CXX) -c $(CFLAGS) -o $@ $<
 
-novacoind.exe: $(OBJS:obj/%=obj/%)
+tuvalucoind.exe: $(OBJS:obj/%=obj/%)
 	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $(LIBPATHS) $^ $(LIBS) -lshlwapi
-	$(STRIP) novacoind.exe
+	$(STRIP) tuvalucoind.exe
 
 clean:
 	-rm -f obj/*.o
-	-rm -f novacoind.exe
+	-rm -f tuvalucoind.exe
 	-rm -f obj/build.h
 	cd leveldb && TARGET_OS=OS_WINDOWS_CROSSCOMPILE $(MAKE) clean && cd ..
 
