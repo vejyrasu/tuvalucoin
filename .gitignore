@@ -23,4 +23,10 @@ qrc_*.cpp
 .DS_Store
 build
 
+*.config
+*.creator
+*.creator.user
+*.files
+*.includes
+
 !src/leveldb/Makefile
