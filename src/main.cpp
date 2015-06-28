@@ -47,7 +47,7 @@ unsigned int nStakeMaxAge = 60 * 60 * 24 * 90; // 90 days as full weight
 unsigned int nStakeTargetSpacing = 10 * 60; // 10-minute stakes spacing
 unsigned int nModifierInterval = 6 * 60 * 60; // time to elapse before new modifier is computed
 
-int nCoinbaseMaturity = 500;
+int nCoinbaseMaturity = 1;
 
 CBlockIndex* pindexGenesisBlock = NULL;
 int nBestHeight = -1;

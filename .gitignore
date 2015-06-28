@@ -22,11 +22,17 @@ qrc_*.cpp
 #mac specific
 .DS_Store
 build
-
 *.config
 *.creator
 *.creator.user
 *.files
 *.includes
+Makefile.Debug
+Makefile.Release
+_Makefile.Release
+novacoin-qt_plugin_import.cpp
+object_script.novacoin-qt.Debug
+object_script.novacoin-qt.Release
+release/*
 
 !src/leveldb/Makefile
