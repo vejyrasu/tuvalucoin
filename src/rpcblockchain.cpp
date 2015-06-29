@@ -40,8 +40,7 @@ double GetDifficulty(const CBlockIndex* blockindex)
         nShift--;
     }
 
-    //return dDiff;
-    return 0.00000001;
+    return dDiff;
 }
 
 double GetPoWMHashPS()
