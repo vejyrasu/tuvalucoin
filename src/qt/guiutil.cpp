@@ -83,8 +83,8 @@ void setupAmountWidget(QLineEdit *widget, QWidget *parent)
 
 bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 {
-    // TuvaluCoin: check prefix
-    if(uri.scheme() != QString("tuvalucoin"))
+    // TestCoin: check prefix
+    if(uri.scheme() != QString("testcoin"))
         return false;
 
     SendCoinsRecipient rv;
@@ -134,13 +134,13 @@ bool parseBitcoinURI(const QUrl &uri, SendCoinsRecipient *out)
 
 bool parseBitcoinURI(QString uri, SendCoinsRecipient *out)
 {
-    // Convert tuvalucoin:// to tuvalucoin:
+    // Convert testcoin:// to testcoin:
     //
     //    Cannot handle this later, because bitcoin:// will cause Qt to see the part after // as host,
     //    which will lower-case it (and thus invalidate the address).
-    if(uri.startsWith("tuvalucoin://"))
+    if(uri.startsWith("testcoin://"))
     {
-        uri.replace(0, 10, "tuvalucoin:");
+        uri.replace(0, 10, "testcoin:");
     }
     QUrl uriInstance(uri);
     return parseBitcoinURI(uriInstance, out);
@@ -292,7 +292,7 @@ bool ToolTipToRichTextFilter::eventFilter(QObject *obj, QEvent *evt)
 #ifdef WIN32
 boost::filesystem::path static StartupShortcutPath()
 {
-    return GetSpecialFolderPath(CSIDL_STARTUP) / "TuvaluCoin.lnk";
+    return GetSpecialFolderPath(CSIDL_STARTUP) / "TestCoin.lnk";
 }
 
 bool GetStartOnSystemStartup()
@@ -374,7 +374,7 @@ boost::filesystem::path static GetAutostartDir()
 
 boost::filesystem::path static GetAutostartFilePath()
 {
-    return GetAutostartDir() / "tuvalucoin.desktop";
+    return GetAutostartDir() / "testcoin.desktop";
 }
 
 bool GetStartOnSystemStartup()
@@ -415,7 +415,7 @@ bool SetStartOnSystemStartup(bool fAutoStart)
         // Write a bitcoin.desktop file to the autostart directory:
         optionFile << "[Desktop Entry]\n";
         optionFile << "Type=Application\n";
-        optionFile << "Name=TuvaluCoin\n";
+        optionFile << "Name=TestCoin\n";
         optionFile << "Exec=" << pszExePath << " -min\n";
         optionFile << "Terminal=false\n";
         optionFile << "Hidden=false\n";
@@ -436,10 +436,10 @@ bool SetStartOnSystemStartup(bool fAutoStart) { return false; }
 HelpMessageBox::HelpMessageBox(QWidget *parent) :
     QMessageBox(parent)
 {
-    header = tr("TuvaluCoin-Qt") + " " + tr("version") + " " +
+    header = tr("TestCoin-Qt") + " " + tr("version") + " " +
         QString::fromStdString(FormatFullVersion()) + "\n\n" +
         tr("Usage:") + "\n" +
-        "  tuvalucoin-qt [" + tr("command-line options") + "]                     " + "\n";
+        "  testcoin-qt [" + tr("command-line options") + "]                     " + "\n";
 
     coreOptions = QString::fromStdString(HelpMessage());
 
@@ -448,7 +448,7 @@ HelpMessageBox::HelpMessageBox(QWidget *parent) :
         "  -min                   " + tr("Start minimized") + "\n" +
         "  -splash                " + tr("Show splash screen on startup (default: 1)") + "\n";
 
-    setWindowTitle(tr("TuvaluCoin-Qt"));
+    setWindowTitle(tr("TestCoin-Qt"));
     setTextFormat(Qt::PlainText);
     // setMinimumWidth is ignored for QMessageBox so put in non-breaking spaces to make it wider.
     setText(header + QString(QChar(0x2003)).repeated(50));

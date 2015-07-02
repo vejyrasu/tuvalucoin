@@ -1,5 +1,5 @@
 // Copyright (c) 2013 NovaCoin Developers
-// Copyright (c) 2015 TuvaluCoin developers
+// Copyright (c) 2015 TestCoin developers
 
 #include <string.h>
 #include "pbkdf2.h"

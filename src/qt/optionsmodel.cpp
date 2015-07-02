@@ -47,9 +47,9 @@ void OptionsModel::Init()
         if(fTestNet)
             settings.setValue("strThirdPartyTxUrls", "");
         else
-            settings.setValue("strThirdPartyTxUrls", "https://bitinfocharts.com/tuvalucoin/tx/%s|https://coinplorer.com/TVC/Transactions/%s|https://explorer.novaco.in/tx/%s|https://bchain.info/TVC/tx/%s");
+            settings.setValue("strThirdPartyTxUrls", "https://bitinfocharts.com/testcoin/tx/%s|https://coinplorer.com/TTC/Transactions/%s|https://explorer.novaco.in/tx/%s|https://bchain.info/TTC/tx/%s");
     }
-    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://bitinfocharts.com/tuvalucoin/tx/%s|https://coinplorer.com/TVC/Transactions/%s|https://explorer.novaco.in/tx/%s|https://bchain.info/TVC/tx/%s").toString();
+    strThirdPartyTxUrls = settings.value("strThirdPartyTxUrls", "https://bitinfocharts.com/testcoin/tx/%s|https://coinplorer.com/TTC/Transactions/%s|https://explorer.novaco.in/tx/%s|https://bchain.info/TTC/tx/%s").toString();
     fMinimizeToTray = settings.value("fMinimizeToTray", false).toBool();
     fMinimizeOnClose = settings.value("fMinimizeOnClose", false).toBool();
     fCoinControlFeatures = settings.value("fCoinControlFeatures", false).toBool();

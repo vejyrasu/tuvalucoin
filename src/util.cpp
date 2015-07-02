@@ -1030,7 +1030,7 @@ static std::string FormatException(std::exception* pex, const char* pszThread)
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(NULL, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "tuvalucoin";
+    const char* pszModule = "testcoin";
 #endif
     if (pex)
         return strprintf(
@@ -1079,13 +1079,13 @@ void PrintExceptionContinue(std::exception* pex, const char* pszThread)
 boost::filesystem::path GetDefaultDataDir()
 {
     namespace fs = boost::filesystem;
-    // Windows < Vista: C:\Documents and Settings\Username\Application Data\TuvaluCoin
-    // Windows >= Vista: C:\Users\Username\AppData\Roaming\TuvaluCoin
-    // Mac: ~/Library/Application Support/TuvaluCoin
-    // Unix: ~/.tuvalucoin
+    // Windows < Vista: C:\Documents and Settings\Username\Application Data\TestCoin
+    // Windows >= Vista: C:\Users\Username\AppData\Roaming\TestCoin
+    // Mac: ~/Library/Application Support/TestCoin
+    // Unix: ~/.testcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "TuvaluCoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "TestCoin";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -1097,10 +1097,10 @@ boost::filesystem::path GetDefaultDataDir()
     // Mac
     pathRet /= "Library/Application Support";
     fs::create_directory(pathRet);
-    return pathRet / "TuvaluCoin";
+    return pathRet / "TestCoin";
 #else
     // Unix
-    return pathRet / ".tuvalucoin";
+    return pathRet / ".testcoin";
 #endif
 #endif
 }
@@ -1142,7 +1142,7 @@ const boost::filesystem::path &GetDataDir(bool fNetSpecific)
 
 boost::filesystem::path GetConfigFile()
 {
-    boost::filesystem::path pathConfigFile(GetArg("-conf", "tuvalucoin.conf"));
+    boost::filesystem::path pathConfigFile(GetArg("-conf", "testcoin.conf"));
     if (!pathConfigFile.is_complete()) pathConfigFile = GetDataDir(false) / pathConfigFile;
     return pathConfigFile;
 }
@@ -1173,7 +1173,7 @@ void ReadConfigFile(map<string, string>& mapSettingsRet,
 
 boost::filesystem::path GetPidFile()
 {
-    boost::filesystem::path pathPidFile(GetArg("-pid", "tuvalucoind.pid"));
+    boost::filesystem::path pathPidFile(GetArg("-pid", "testcoind.pid"));
     if (!pathPidFile.is_complete()) pathPidFile = GetDataDir() / pathPidFile;
     return pathPidFile;
 }
@@ -1320,10 +1320,10 @@ void AddTimeData(const CNetAddr& ip, int64_t nTime)
                 if (!fMatch)
                 {
                     fDone = true;
-                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong TuvaluCoin will not work properly.");
+                    string strMessage = _("Warning: Please check that your computer's date and time are correct! If your clock is wrong TestCoin will not work properly.");
                     strMiscWarning = strMessage;
                     printf("*** %s\n", strMessage.c_str());
-                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("TuvaluCoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
+                    uiInterface.ThreadSafeMessageBox(strMessage+" ", string("TestCoin"), CClientUIInterface::OK | CClientUIInterface::ICON_EXCLAMATION);
                 }
             }
         }

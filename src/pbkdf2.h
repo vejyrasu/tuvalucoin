@@ -1,5 +1,5 @@
 // Copyright (c) 2013 NovaCoin Developers
-// Copyright (c) 2015 TuvaluCoin developers
+// Copyright (c) 2015 TestCoin developers
 
 #ifndef PBKDF2_H
 #define PBKDF2_H
