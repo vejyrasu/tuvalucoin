@@ -1051,8 +1051,8 @@ int64_t GetProofOfWorkReward(unsigned int nBits, int64_t nFees)
     if (fDebug && GetBoolArg("-printcreation"))
         printf("GetProofOfWorkReward() : create=%s nBits=0x%08x nSubsidy=%" PRId64 "\n", FormatMoney(nSubsidy).c_str(), nBits, nSubsidy);
 
-//    return min(nSubsidy, MAX_MINT_PROOF_OF_WORK) + nFees;
-    return MAX_MINT_PROOF_OF_WORK * 10000000;
+    return min(nSubsidy, MAX_MINT_PROOF_OF_WORK) + nFees;
+    //return MAX_MINT_PROOF_OF_WORK * 10000000;
 }
 
 // miner's coin stake reward based on nBits and coin age spent (coin-days)

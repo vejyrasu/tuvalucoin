@@ -34,5 +34,9 @@ novacoin-qt_plugin_import.cpp
 object_script.novacoin-qt.Debug
 object_script.novacoin-qt.Release
 release/*
+object_script.testcoin-qt.Debug
+object_script.testcoin-qt.Release
+testcoin-qt.pro
+testcoin-qt_plugin_import.cpp
 
 !src/leveldb/Makefile
